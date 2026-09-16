@@ -1,3 +1,9 @@
+/* ==========================================================
+   CineCollect — hoja de estilos
+   Pensada exclusivamente para la estructura HTML existente
+   (header / nav, dos <section>, tres <article>, footer).
+   ========================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
@@ -8,11 +14,12 @@
   --text: #f3f2f6;
   --text-muted: #9b9aa4;
 
-  --yellow: #66a3f3;
+  --yellow: #f2c14e;
   --yellow-dark: #1a1508;
   --teal: #49c9c3;
   --red: #ef5f78;
 
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-h1: 'Outfit', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -55,7 +62,7 @@ header {
 }
 
 header h2 {
-  font-family: var(--font-h1);
+  font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
@@ -109,8 +116,16 @@ main {
 /* ---------- Hero (primera sección) ---------- */
 
 main > section:first-of-type {
+  position: relative;
   text-align: center;
   padding: 5rem 0 4rem;
+  background-image:
+    linear-gradient(180deg, rgba(8, 8, 12, 0.75) 0%, rgba(8, 8, 12, 0.92) 100%),
+    url('../assets/hero_background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 0 24px 24px;
 }
 
 main > section:first-of-type h1 {
@@ -177,7 +192,7 @@ main > section:last-of-type > header {
 }
 
 main > section:last-of-type > header h2 {
-  font-family: var(--font-h1);
+  font-family: var(--font-display);
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--text);
@@ -250,3 +265,21 @@ footer small {
   font-size: 0.82rem;
 }
 
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  header,
+  main,
+  footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  main > section:last-of-type {
+    grid-template-columns: 1fr;
+  }
+
+  header nav {
+    display: none;
+  }
+}
