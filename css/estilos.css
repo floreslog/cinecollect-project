@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #08080c;
+  --bg-soft: #0f0f15;
+  --card: #16161e;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f3f2f6;
+  --text-muted: #9b9aa4;
+
+  --yellow: #f2c14e;
+  --yellow-dark: #1a1508;
+  --teal: #49c9c3;
+  --red: #ef5f78;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-h1: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Header ---------- */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem 4rem;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--yellow);
+  white-space: nowrap;
+}
+
+header nav {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+header nav a {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: var(--text);
+}
+
+header div a {
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+header div a:hover,
+header div a:focus-visible {
+  border-color: var(--yellow);
+  background: rgba(242, 193, 78, 0.08);
+}
+
+/* ---------- Main ---------- */
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* ---------- Hero (primera sección) ---------- */
+
+main > section:first-of-type {
+  text-align: center;
+  padding: 5rem 0 4rem;
+}
+
+main > section:first-of-type h1 {
+  font-family: var(--font-h1);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 780px;
+  margin: 0 auto 1.25rem;
+  color: var(--text);
+}
+
+main > section:first-of-type p {
+  max-width: 560px;
+  margin: 0 auto 2.25rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+}
+
+main > section:first-of-type a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--yellow);
+  color: var(--yellow-dark);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main > section:first-of-type a svg {
+  width: 18px;
+  height: 18px;
+  color: var(--yellow-dark);
+  flex-shrink: 0;
+}
+
+main > section:first-of-type a:hover,
+main > section:first-of-type a:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(242, 193, 78, 0.25);
+}
+
+/* ---------- Sección de características ---------- */
+
+main > section:last-of-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 3rem 0 5rem;
+  border-top: 1px solid var(--border);
+}
+
+main > section:last-of-type > header {
+  grid-column: 1 / -1;
+  display: block;
+  position: static;
+  background: none;
+  border: none;
+  padding: 0 0 2.5rem;
+  max-width: 640px;
+}
+
+main > section:last-of-type > header h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.6rem;
+}
+
+main > section:last-of-type > header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ---------- Tarjetas (article) ---------- */
+
+article {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+
+article svg {
+  width: 22px;
+  height: 22px;
+  padding: 10px;
+  border-radius: 8px;
+  box-sizing: content-box;
+  margin-bottom: 1.1rem;
+}
+
+article:nth-of-type(1) svg {
+  color: var(--teal);
+  background: rgba(73, 201, 195, 0.12);
+}
+
+article:nth-of-type(2) svg {
+  color: var(--yellow);
+  background: rgba(242, 193, 78, 0.12);
+}
+
+article:nth-of-type(3) svg {
+  color: var(--red);
+  background: rgba(239, 95, 120, 0.12);
+}
+
+article h3 {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.6rem;
+}
+
+article p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 4rem;
+  text-align: center;
+}
+
+footer small {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
