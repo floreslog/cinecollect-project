@@ -8,12 +8,11 @@
   --text: #f3f2f6;
   --text-muted: #9b9aa4;
 
-  --yellow: #f2c14e;
+  --yellow: #66a3f3;
   --yellow-dark: #1a1508;
   --teal: #49c9c3;
   --red: #ef5f78;
 
-  --font-display: 'Playfair Display', Georgia, serif;
   --font-h1: 'Outfit', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -56,7 +55,7 @@ header {
 }
 
 header h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-h1);
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
@@ -178,7 +177,7 @@ main > section:last-of-type > header {
 }
 
 main > section:last-of-type > header h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-h1);
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--text);
