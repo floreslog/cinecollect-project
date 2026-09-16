@@ -1,9 +1,3 @@
-/* ==========================================================
-   CineCollect — hoja de estilos
-   Pensada exclusivamente para la estructura HTML existente
-   (header / nav, dos <section>, tres <article>, footer).
-   ========================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
@@ -14,13 +8,12 @@
   --text: #f3f2f6;
   --text-muted: #9b9aa4;
 
-  --yellow: #f2c14e;
+  --light-blue: #66a3f3;
   --yellow-dark: #1a1508;
   --teal: #49c9c3;
   --red: #ef5f78;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-h1: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-principal: 'Outfit', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -62,11 +55,11 @@ header {
 }
 
 header h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-principal);
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
-  color: var(--yellow);
+  color: var(--light-blue);
   white-space: nowrap;
 }
 
@@ -101,7 +94,7 @@ header div a {
 
 header div a:hover,
 header div a:focus-visible {
-  border-color: var(--yellow);
+  border-color: var(--light-blue);
   background: rgba(242, 193, 78, 0.08);
 }
 
@@ -121,6 +114,7 @@ main > section:first-of-type {
   padding: 5rem 0 4rem;
   background-image:
     linear-gradient(180deg, rgba(8, 8, 12, 0.75) 0%, rgba(8, 8, 12, 0.92) 100%),
+    linear-gradient(90deg, rgba(8, 8, 12, 0.98) 0%, rgba(8, 8, 12, 0) 18%, rgba(8, 8, 12, 0) 82%, rgba(8, 8, 12, 0.98) 100%),
     url('../assets/hero_background.webp');
   background-size: cover;
   background-position: center;
@@ -129,7 +123,7 @@ main > section:first-of-type {
 }
 
 main > section:first-of-type h1 {
-  font-family: var(--font-h1);
+  font-family: var(--font-principal);
   font-size: clamp(2rem, 4vw, 2.9rem);
   font-weight: 700;
   line-height: 1.25;
@@ -149,8 +143,8 @@ main > section:first-of-type a {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: var(--yellow);
-  color: var(--yellow-dark);
+  background: var(--light-blue);
+  color: var(--light-blue-dark);
   font-weight: 600;
   font-size: 0.98rem;
   padding: 0.85rem 1.75rem;
@@ -161,7 +155,8 @@ main > section:first-of-type a {
 main > section:first-of-type a svg {
   width: 18px;
   height: 18px;
-  color: var(--yellow-dark);
+  color: var(--light-blue-dark);
+  stroke-width: 2.5;
   flex-shrink: 0;
 }
 
@@ -192,7 +187,7 @@ main > section:last-of-type > header {
 }
 
 main > section:last-of-type > header h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-principal);
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--text);
@@ -229,8 +224,8 @@ article:nth-of-type(1) svg {
 }
 
 article:nth-of-type(2) svg {
-  color: var(--yellow);
-  background: rgba(242, 193, 78, 0.12);
+  color: var(--light-blue);
+  background: rgb(30, 49, 73);
 }
 
 article:nth-of-type(3) svg {
