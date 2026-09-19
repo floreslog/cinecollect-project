@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <title>Cinecollect - Catalogo</title>
+</head>
+<body>
+    <header>
+        <h2>Cinecollect</h1>
+        <nav>
+            <a href="/catalogo.html">Catalogo</a>
+            <a href="">Mis Favoritos</a>
+        </nav>
+
+        <div>
+            <a href="">Iniciar sesion</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>¡Encuentra tu próxima pelicula!</h1>
+        <p>Explora entre miles de titulos que pueden convertirse en tus favoritos.</p>
+
+        <form role="search">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+                </svg>
+
+                <input required type="text" placeholder="Busca titulos, actores o generos...">
+            </div>
+
+            <div class="busqueda-filtros">
+                <select name="genero" id="genero">
+                    <option value="">Genero</option>
+                    <option value="">Terror</option>
+                    <option value="">Comedia</option>
+                    <option value="">Drama</option>
+                    <option value="">Romance</option>
+                </select>
+
+                <select name="duracion" id="duracion">
+                    <option value="">Duración</option>
+                    <option value="">Corta</option>
+                    <option value="">Media</option>
+                    <option value="">Larga</option>
+                </select>
+
+                <select name="plataforma" id="plataforma">
+                    <option value="">Plataforma</option>
+                    <option value="">Netflix</option>
+                    <option value="">Prime Video</option>
+                    <option value="">HBO</option>
+                    <option value="">Disney+</option>
+                </select>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <small>&copy; Ningun derecho reservado para esta pagina</small>
+    </footer>
+</body>
+
+</html>
