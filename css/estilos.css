@@ -95,7 +95,7 @@ header div a {
 header div a:hover,
 header div a:focus-visible {
   border-color: var(--light-blue);
-  background: rgba(242, 193, 78, 0.08);
+  background: rgba(102, 163, 243, 0.08);
 }
 
 /* ---------- Main ---------- */
@@ -144,7 +144,7 @@ main > section:first-of-type a {
   align-items: center;
   gap: 0.55rem;
   background: var(--light-blue);
-  color: var(--light-blue-dark);
+  color: var(--yellow-dark);
   font-weight: 600;
   font-size: 0.98rem;
   padding: 0.85rem 1.75rem;
@@ -155,7 +155,7 @@ main > section:first-of-type a {
 main > section:first-of-type a svg {
   width: 18px;
   height: 18px;
-  color: var(--light-blue-dark);
+  color: var(--yellow-dark);
   stroke-width: 2.5;
   flex-shrink: 0;
 }
@@ -163,7 +163,7 @@ main > section:first-of-type a svg {
 main > section:first-of-type a:hover,
 main > section:first-of-type a:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(242, 193, 78, 0.25);
+  box-shadow: 0 8px 20px rgba(102, 163, 243, 0.25);
 }
 
 /* ---------- Sección de características ---------- */
@@ -202,14 +202,14 @@ main > section:last-of-type > header p {
 
 /* ---------- Tarjetas (article) ---------- */
 
-article {
+main > section:last-of-type article {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1.75rem;
 }
 
-article svg {
+main > section:last-of-type article svg {
   width: 22px;
   height: 22px;
   padding: 10px;
@@ -218,22 +218,22 @@ article svg {
   margin-bottom: 1.1rem;
 }
 
-article:nth-of-type(1) svg {
+main > section:last-of-type article:nth-of-type(1) svg {
   color: var(--teal);
   background: rgba(73, 201, 195, 0.12);
 }
 
-article:nth-of-type(2) svg {
+main > section:last-of-type article:nth-of-type(2) svg {
   color: var(--light-blue);
   background: rgb(30, 49, 73);
 }
 
-article:nth-of-type(3) svg {
+main > section:last-of-type article:nth-of-type(3) svg {
   color: var(--red);
   background: rgba(239, 95, 120, 0.12);
 }
 
-article h3 {
+main > section:last-of-type article h3 {
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 600;
@@ -241,7 +241,7 @@ article h3 {
   margin: 0 0 0.6rem;
 }
 
-article p {
+main > section:last-of-type article p {
   color: var(--text-muted);
   font-size: 0.92rem;
   margin: 0;
@@ -266,22 +266,22 @@ footer small {
   text-align: center;
   padding: 4rem 0 5rem;
 }
- 
+
 .catalogo-main h1 {
-  font-family: var(--font-h1);
+  font-family: var(--font-principal);
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   font-weight: 700;
   color: var(--text);
   margin: 0 0 0.75rem;
 }
- 
+
 .catalogo-main p {
   color: var(--text-muted);
   font-size: 1rem;
   max-width: 520px;
   margin: 0 auto 2.5rem;
 }
- 
+
 .form-busqueda {
   display: flex;
   flex-direction: column;
@@ -290,7 +290,7 @@ footer small {
   max-width: 720px;
   margin: 0 auto;
 }
- 
+
 .campo-busqueda {
   display: flex;
   align-items: center;
@@ -302,18 +302,18 @@ footer small {
   padding: 0.9rem 1.1rem;
   transition: border-color 0.2s ease;
 }
- 
+
 .campo-busqueda:focus-within {
-  border-color: var(--yellow);
+  border-color: var(--light-blue);
 }
- 
+
 .campo-busqueda svg {
   width: 20px;
   height: 20px;
   color: var(--text-muted);
   flex-shrink: 0;
 }
- 
+
 .campo-busqueda input {
   flex: 1;
   background: none;
@@ -323,11 +323,11 @@ footer small {
   font-size: 0.98rem;
   color: var(--text);
 }
- 
+
 .campo-busqueda input::placeholder {
   color: var(--text-muted);
 }
- 
+
 .busqueda-filtros {
   display: flex;
   flex-wrap: wrap;
@@ -335,7 +335,7 @@ footer small {
   gap: 0.75rem;
   width: 100%;
 }
- 
+
 .busqueda-filtros select {
   flex: 1;
   min-width: 140px;
@@ -349,12 +349,12 @@ footer small {
   cursor: pointer;
   transition: border-color 0.2s ease;
 }
- 
+
 .busqueda-filtros select:hover,
 .busqueda-filtros select:focus-visible {
-  border-color: var(--yellow);
+  border-color: var(--light-blue);
 }
- 
+
 @media (max-width: 700px) {
   .busqueda-filtros select {
     min-width: 100%;
@@ -368,7 +368,7 @@ footer small {
   margin-top: 3rem;
   text-align: left;
 }
- 
+
 .pelicula-card {
   display: flex;
   flex-direction: row;
@@ -380,7 +380,7 @@ footer small {
   border-radius: 12px;
   padding: 1.5rem;
 }
- 
+
 .pelicula-contenido {
   display: flex;
   flex-direction: column;
@@ -388,7 +388,7 @@ footer small {
   flex: 1;
   min-width: 0;
 }
- 
+
 .pelicula-info h3 {
   font-family: var(--font-body);
   font-size: 1.05rem;
@@ -396,27 +396,27 @@ footer small {
   color: var(--text);
   margin: 0 0 0.35rem;
 }
- 
+
 .pelicula-info small {
   display: block;
   color: var(--text-muted);
   font-size: 0.8rem;
 }
- 
+
 .pelicula-contenido p {
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.55;
   margin: 0;
 }
- 
+
 .pelicula-acciones {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
 }
- 
+
 .btn-favorito {
   display: inline-flex;
   align-items: center;
@@ -430,25 +430,25 @@ footer small {
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
- 
+
 .btn-favorito svg {
   width: 19px;
   height: 19px;
 }
- 
+
 .btn-favorito:hover,
 .btn-favorito:focus-visible {
   border-color: var(--red);
   background: rgba(239, 95, 120, 0.12);
   transform: translateY(-1px);
 }
- 
+
 .btn-favorito.activo {
   background: var(--red);
   border-color: var(--red);
   color: var(--bg);
 }
- 
+
 .btn-visto {
   white-space: nowrap;
   padding: 0.65rem 1.1rem;
@@ -462,72 +462,26 @@ footer small {
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
- 
+
 .btn-visto:hover,
 .btn-visto:focus-visible {
   border-color: var(--teal);
   color: var(--teal);
 }
- 
+
 .btn-visto.activo {
   background: var(--teal);
   border-color: var(--teal);
   color: var(--bg);
 }
- 
+
 @media (max-width: 600px) {
   .pelicula-card {
     flex-direction: column;
     align-items: stretch;
   }
- 
+
   .pelicula-acciones {
     justify-content: flex-end;
   }
-}
- 
- 
-.lista-peliculas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-  max-width: 1100px;
-  margin: 3.5rem auto 0;
-  text-align: left;
-}
- 
-.pelicula-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
- 
-.pelicula-card:hover {
-  border-color: var(--yellow);
-  transform: translateY(-3px);
-}
- 
-.pelicula-card h3 {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text);
-  margin: 0;
-}
- 
-.pelicula-card small {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
- 
-.pelicula-card p {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  line-height: 1.55;
-  margin: 0;
 }
