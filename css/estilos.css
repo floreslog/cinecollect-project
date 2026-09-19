@@ -329,16 +329,22 @@ footer small {
 }
 
 .busqueda-filtros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto;
+  grid-auto-columns: minmax(140px, 1fr);
+  gap: 0.4rem 1rem;
   width: 100%;
 }
 
+.busqueda-filtros label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 .busqueda-filtros select {
-  flex: 1;
-  min-width: 140px;
+  width: 100%;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -356,8 +362,10 @@ footer small {
 }
 
 @media (max-width: 700px) {
-  .busqueda-filtros select {
-    min-width: 100%;
+  .busqueda-filtros {
+    grid-auto-flow: row;
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -423,7 +431,7 @@ footer small {
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 999px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--bg-soft);
   color: var(--red);
