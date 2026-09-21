@@ -420,6 +420,7 @@ footer small {
 
 .pelicula-acciones {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
@@ -428,36 +429,7 @@ footer small {
 .btn-favorito {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--bg-soft);
-  color: var(--red);
-  cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-}
-
-.btn-favorito svg {
-  width: 19px;
-  height: 19px;
-}
-
-.btn-favorito:hover,
-.btn-favorito:focus-visible {
-  border-color: var(--red);
-  background: rgba(239, 95, 120, 0.12);
-  transform: translateY(-1px);
-}
-
-.btn-favorito.activo {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--bg);
-}
-
-.btn-visto {
+  gap: 0.4rem;
   white-space: nowrap;
   padding: 0.65rem 1.1rem;
   border-radius: 8px;
@@ -469,6 +441,45 @@ footer small {
   font-weight: 600;
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-favorito svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-favorito:hover,
+.btn-favorito:focus-visible {
+  border-color: var(--light-blue);
+  color: var(--light-blue);
+}
+
+.btn-favorito.activo {
+  background: var(--light-blue);
+  border-color: var(--light-blue);
+  color: var(--yellow-dark);
+}
+
+.btn-visto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-visto svg {
+  width: 16px;
+  height: 16px;
 }
 
 .btn-visto:hover,
