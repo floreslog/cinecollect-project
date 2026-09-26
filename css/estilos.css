@@ -459,6 +459,7 @@ footer small {
   background: var(--light-blue);
   border-color: var(--light-blue);
   color: var(--yellow-dark);
+  cursor: default;
 }
 
 .btn-ver-despues.activo svg {
