@@ -511,7 +511,7 @@ footer small {
 
 .btn-visto:disabled {
   opacity: 0.6;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
