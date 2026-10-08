@@ -1,20 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
-  --bg: #08080c;
-  --bg-soft: #0f0f15;
-  --card: #16161e;
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #f3f2f6;
-  --text-muted: #9b9aa4;
+  --bg: #ffffff;
+  --bg-soft: #f4f4f5;
+  --card: #fafafa;
+  --border: #dddddd;
+  --text: #1a1a1a;
+  --text-muted: #6b7280;
 
-  --light-blue: #66a3f3;
-  --yellow-dark: #1a1508;
-  --teal: #49c9c3;
-  --red: #ef5f78;
+  --light-blue: #2563eb;
+  --yellow-dark: #ffffff;
+  --teal: #16a34a;
+  --red: #dc2626;
 
-  --font-principal: 'Outfit', 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-principal: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 * {
@@ -31,7 +29,6 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -46,26 +43,25 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1.25rem 4rem;
-  background: var(--bg-soft);
+  padding: 1rem 2rem;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  z-index: 10;
 }
 
 header h2 {
   font-family: var(--font-principal);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
-  color: var(--light-blue);
+  color: var(--text);
   white-space: nowrap;
 }
 
 header nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   flex: 1;
   justify-content: center;
 }
@@ -73,7 +69,6 @@ header nav {
 header nav a {
   font-size: 0.95rem;
   color: var(--text-muted);
-  transition: color 0.2s ease;
 }
 
 header nav a:hover,
@@ -83,87 +78,76 @@ header nav a:focus-visible {
 
 header div a {
   display: inline-block;
-  padding: 0.55rem 1.25rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 4px;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text);
-  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 header div a:hover,
 header div a:focus-visible {
   border-color: var(--light-blue);
-  background: rgba(102, 163, 243, 0.08);
 }
 
 /* ---------- Main ---------- */
 
 main {
-  max-width: 1180px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 2rem;
 }
 
 /* ---------- Hero (primera sección) ---------- */
 
 main > section:first-of-type {
-  position: relative;
   text-align: center;
-  padding: 5rem 0 4rem;
-  background-image:
-    linear-gradient(180deg, rgba(8, 8, 12, 0.75) 0%, rgba(8, 8, 12, 0.92) 100%),
-    linear-gradient(90deg, rgba(8, 8, 12, 0.98) 0%, rgba(8, 8, 12, 0) 18%, rgba(8, 8, 12, 0) 82%, rgba(8, 8, 12, 0.98) 100%),
-    url('../assets/hero_background.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 0 0 24px 24px;
+  padding: 3rem 0;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
 }
 
 main > section:first-of-type h1 {
   font-family: var(--font-principal);
-  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.25;
-  max-width: 780px;
-  margin: 0 auto 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 1rem;
   color: var(--text);
 }
 
 main > section:first-of-type p {
   max-width: 560px;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto 1.5rem;
   color: var(--text-muted);
-  font-size: 1.02rem;
+  font-size: 1rem;
 }
 
 main > section:first-of-type a {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   background: var(--light-blue);
   color: var(--yellow-dark);
   font-weight: 600;
-  font-size: 0.98rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
 }
 
 main > section:first-of-type a svg {
   width: 18px;
   height: 18px;
   color: var(--yellow-dark);
-  stroke-width: 2.5;
+  stroke-width: 2;
   flex-shrink: 0;
 }
 
 main > section:first-of-type a:hover,
 main > section:first-of-type a:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 163, 243, 0.25);
+  opacity: 0.9;
 }
 
 /* ---------- Sección de características ---------- */
@@ -172,7 +156,7 @@ main > section:last-of-type {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  padding: 3rem 0 5rem;
+  padding: 3rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -182,21 +166,21 @@ main > section:last-of-type > header {
   position: static;
   background: none;
   border: none;
-  padding: 0 0 2.5rem;
+  padding: 0 0 1.5rem;
   max-width: 640px;
 }
 
 main > section:last-of-type > header h2 {
   font-family: var(--font-principal);
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.5rem;
 }
 
 main > section:last-of-type > header p {
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0;
 }
 
@@ -205,45 +189,32 @@ main > section:last-of-type > header p {
 main > section:last-of-type article {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.75rem;
+  border-radius: 6px;
+  padding: 1.25rem;
 }
 
 main > section:last-of-type article svg {
-  width: 22px;
-  height: 22px;
-  padding: 10px;
-  border-radius: 8px;
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  border-radius: 4px;
   box-sizing: content-box;
-  margin-bottom: 1.1rem;
-}
-
-main > section:last-of-type article:nth-of-type(1) svg {
-  color: var(--teal);
-  background: rgba(73, 201, 195, 0.12);
-}
-
-main > section:last-of-type article:nth-of-type(2) svg {
-  color: var(--light-blue);
-  background: rgb(30, 49, 73);
-}
-
-main > section:last-of-type article:nth-of-type(3) svg {
-  color: var(--red);
-  background: rgba(239, 95, 120, 0.12);
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-soft);
 }
 
 main > section:last-of-type article h3 {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.5rem;
 }
 
 main > section:last-of-type article p {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
@@ -251,56 +222,55 @@ main > section:last-of-type article p {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: 1.75rem 4rem;
+  padding: 1.5rem 2rem;
   text-align: center;
 }
 
 footer small {
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 /*=============== Para la vista CATALOGO ===============*/
 
 .catalogo-main {
   text-align: center;
-  padding: 4rem 0 5rem;
+  padding: 3rem 0;
 }
 
 .catalogo-main h1 {
   font-family: var(--font-principal);
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
 }
 
 .catalogo-main p {
   color: var(--text-muted);
   font-size: 1rem;
   max-width: 520px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
 }
 
 .form-busqueda {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  max-width: 720px;
+  gap: 1rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .campo-busqueda {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   width: 100%;
-  background: var(--card);
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.9rem 1.1rem;
-  transition: border-color 0.2s ease;
+  border-radius: 4px;
+  padding: 0.65rem 0.9rem;
 }
 
 .campo-busqueda:focus-within {
@@ -308,8 +278,8 @@ footer small {
 }
 
 .campo-busqueda svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   color: var(--text-muted);
   flex-shrink: 0;
 }
@@ -320,7 +290,7 @@ footer small {
   border: none;
   outline: none;
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   color: var(--text);
 }
 
@@ -333,27 +303,26 @@ footer small {
   grid-auto-flow: column;
   grid-template-rows: auto auto;
   grid-auto-columns: minmax(140px, 1fr);
-  gap: 0.4rem 1rem;
+  gap: 0.3rem 1rem;
   width: 100%;
 }
 
 .busqueda-filtros label {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
 .busqueda-filtros select {
   width: 100%;
-  background: var(--card);
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.65rem 0.9rem;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text);
   cursor: pointer;
-  transition: border-color 0.2s ease;
 }
 
 .busqueda-filtros select:hover,
@@ -372,8 +341,8 @@ footer small {
 .lista-de-peliculas {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 3rem;
+  gap: 1rem;
+  margin-top: 2rem;
   text-align: left;
 }
 
@@ -382,27 +351,27 @@ footer small {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 6px;
+  padding: 1.25rem;
 }
 
 .pelicula-contenido {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex: 1;
   min-width: 0;
 }
 
 .pelicula-info h3 {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.25rem;
 }
 
 .pelicula-info small {
@@ -414,7 +383,7 @@ footer small {
 .pelicula-contenido p {
   color: var(--text-muted);
   font-size: 0.9rem;
-  line-height: 1.55;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -422,7 +391,7 @@ footer small {
   display: flex;
   /*flex-direction: column;*/
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -431,16 +400,15 @@ footer small {
   align-items: center;
   gap: 0.4rem;
   white-space: nowrap;
-  padding: 0.65rem 1.1rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
   border: 1px solid var(--border);
-  background: var(--bg-soft);
+  background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .btn-ver-despues svg {
@@ -466,36 +434,26 @@ footer small {
   color: var(--yellow-dark);
 }
 
-.btn-visto svg {
-  width: 16px;
-  height: 16px;
-  color: var(--teal);
-}
-
-.btn-visto.activo svg {
-  color: var(--bg);
-}
-
 .btn-visto {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   white-space: nowrap;
-  padding: 0.65rem 1.1rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
   border: 1px solid var(--border);
-  background: var(--bg-soft);
+  background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .btn-visto svg {
   width: 16px;
   height: 16px;
+  color: var(--teal);
 }
 
 .btn-visto:hover,
@@ -507,6 +465,10 @@ footer small {
 .btn-visto.activo {
   background: var(--teal);
   border-color: var(--teal);
+  color: var(--bg);
+}
+
+.btn-visto.activo svg {
   color: var(--bg);
 }
 
@@ -532,7 +494,7 @@ footer small {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 3rem 0 0;
+  margin: 2rem 0 0;
   padding: 0;
 }
 
@@ -540,22 +502,21 @@ footer small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 38px;
-  height: 38px;
+  min-width: 34px;
+  height: 34px;
   padding: 0 0.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid var(--border);
-  background: var(--bg-soft);
+  background: var(--bg);
   color: var(--text-muted);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .paginacion a svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .paginacion a:hover,
