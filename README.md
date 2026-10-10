@@ -1,4 +1,4 @@
-#Proyecto Cinecollect
+##Proyecto Cinecollect
 --
 Aplicación web para gestionar una colección de películas.
 
