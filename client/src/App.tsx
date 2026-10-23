@@ -9,10 +9,6 @@ export default function App() {
           <a href="">Mis favoritos</a>
           <a href="">Ver despues</a>
         </nav>
-
-        <div>
-          <a href="">Iniciar sesion</a>
-        </div>
       </header>
 
       <main className="catalogo-main">
