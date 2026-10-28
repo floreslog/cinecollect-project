@@ -1,4 +1,5 @@
 import type { Pelicula } from '../../data/peliculas';
+import '../card-pelicula/CardPelicula.css';
 
 interface CardPeliculaProps {
   pelicula: Pelicula;
