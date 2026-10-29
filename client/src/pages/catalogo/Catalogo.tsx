@@ -10,18 +10,20 @@ function normalizar(texto: string) {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
-export default function Catalogo() {
+interface CatalogoProps {
+  vistas: number[];
+  verDespues: number[];
+  onMarcarVista: (id: number) => void;
+  onAgregarVerDespues: (id: number) => void;
+}
+
+export default function Catalogo({
+  vistas,
+  verDespues,
+  onMarcarVista,
+  onAgregarVerDespues,
+}: CatalogoProps) {
   const [busqueda, setBusqueda] = useState('');
-  const [vistas, setVistas] = useState<number[]>([]);
-  const [verDespues, setVerDespues] = useState<number[]>([]);
-
-  function marcarVista(id: number) {
-    setVistas((anteriores) => [...anteriores, id]);
-  }
-
-  function agregarVerDespues(id: number) {
-    setVerDespues((anteriores) => [...anteriores, id]);
-  }
 
   const termino = normalizar(busqueda.trim());
   const peliculasFiltradas = peliculas.filter(
@@ -101,8 +103,8 @@ export default function Catalogo() {
               pelicula={pelicula}
               vista={vistas.includes(pelicula.id)}
               enVerDespues={verDespues.includes(pelicula.id)}
-              onMarcarVista={() => marcarVista(pelicula.id)}
-              onAgregarVerDespues={() => agregarVerDespues(pelicula.id)}
+              onMarcarVista={() => onMarcarVista(pelicula.id)}
+              onAgregarVerDespues={() => onAgregarVerDespues(pelicula.id)}
             />
           ))
         ) : (
