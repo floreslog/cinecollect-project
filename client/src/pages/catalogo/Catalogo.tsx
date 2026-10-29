@@ -1,14 +1,34 @@
+import { useState } from 'react';
 import './Catalogo.css';
 import { peliculas } from '../../data/peliculas';
 import CardPelicula from '../../components/card-pelicula/CardPelicula';
 
+function normalizar(texto: string) {
+  return texto
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
 export default function Catalogo() {
+  const [busqueda, setBusqueda] = useState('');
+
+  const termino = normalizar(busqueda.trim());
+  const peliculasFiltradas = peliculas.filter(
+    (pelicula) =>
+      normalizar(pelicula.nombre).includes(termino) ||
+      normalizar(pelicula.actores).includes(termino),
+  );
   return (
     <main className="catalogo-main">
       <h1>Busqueda de peliculas</h1>
       <p>Busca libremente tu pelicula o utiliza los filtros</p>
 
-      <form className="form-busqueda" role="search">
+      <form
+        className="form-busqueda"
+        role="search"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <div className="campo-busqueda">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +47,10 @@ export default function Catalogo() {
           </svg>
 
           <input
-            required
             type="text"
             placeholder="Buscar titulos, actores o generos..."
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
           />
         </div>
 
@@ -63,9 +84,13 @@ export default function Catalogo() {
       </form>
 
       <div className="lista-de-peliculas">
-        {peliculas.map((pelicula) => (
-          <CardPelicula key={pelicula.nombre} pelicula={pelicula} />
-        ))}
+        {peliculasFiltradas.length > 0 ? (
+          peliculasFiltradas.map((pelicula) => (
+            <CardPelicula key={pelicula.nombre} pelicula={pelicula} />
+          ))
+        ) : (
+          <p>No se encontraron películas para "{busqueda}"</p>
+        )}
       </div>
 
       <nav>
