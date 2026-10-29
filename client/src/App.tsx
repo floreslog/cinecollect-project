@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { Routes, Route } from 'react-router';
 import './App.css';
 import Header from './components/header/Header';
@@ -6,8 +6,11 @@ import Inicio from './pages/inicio/Inicio';
 import Catalogo from './pages/catalogo/Catalogo';
 
 export default function App() {
-  const [vistas, setVistas] = useState<number[]>([]);
-  const [verDespues, setVerDespues] = useState<number[]>([]);
+  const [vistas, setVistas] = useLocalStorage<number[]>('vistas', []);
+  const [verDespues, setVerDespues] = useLocalStorage<number[]>(
+    'verDespues',
+    [],
+  );
 
   function marcarVista(id: number) {
     setVistas((anteriores) => [...anteriores, id]);
