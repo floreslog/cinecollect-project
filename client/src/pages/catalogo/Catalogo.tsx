@@ -86,7 +86,7 @@ export default function Catalogo() {
       <div className="lista-de-peliculas">
         {peliculasFiltradas.length > 0 ? (
           peliculasFiltradas.map((pelicula) => (
-            <CardPelicula key={pelicula.nombre} pelicula={pelicula} />
+            <CardPelicula key={pelicula.id} pelicula={pelicula} />
           ))
         ) : (
           <p>No se encontraron películas para "{busqueda}"</p>
