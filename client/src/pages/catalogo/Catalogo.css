@@ -95,14 +95,6 @@
   border-color: var(--blue);
 }
 
-@media (max-width: 700px) {
-  .busqueda-filtros {
-    grid-auto-flow: row;
-    grid-template-rows: none;
-    grid-template-columns: 1fr;
-  }
-}
-
 .lista-de-peliculas {
   display: flex;
   flex-direction: column;
