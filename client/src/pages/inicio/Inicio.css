@@ -1,0 +1,29 @@
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.hero a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--blue);
+  color: var(--on-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+}
+
+.hero a svg {
+  width: 18px;
+  height: 18px;
+  color: var(--on-accent);
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.hero a:hover,
+.hero a:focus-visible {
+  opacity: 0.9;
+}
