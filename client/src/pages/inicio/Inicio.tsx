@@ -1,11 +1,12 @@
 import './Inicio.css';
+import { Link } from 'react-router';
 
 export default function Inicio() {
   return (
     <main>
       <section className="hero">
         <h1>Ir al catalogo de peliculas</h1>
-        <a href="/catalogo">
+        <Link to="/catalogo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -22,7 +23,7 @@ export default function Inicio() {
             <path d="M21 21l-6 -6" />
           </svg>
           Explorar Catálogo
-        </a>
+        </Link>
       </section>
     </main>
   );
