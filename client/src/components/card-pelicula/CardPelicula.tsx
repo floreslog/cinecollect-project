@@ -1,15 +1,21 @@
 import type { Pelicula } from '../../data/peliculas';
-import '../card-pelicula/CardPelicula.css';
-import { useState } from 'react';
+import './CardPelicula.css';
 
 interface CardPeliculaProps {
   pelicula: Pelicula;
+  vista: boolean;
+  enVerDespues: boolean;
+  onMarcarVista: () => void;
+  onAgregarVerDespues: () => void;
 }
 
-export default function CardPelicula({ pelicula }: CardPeliculaProps) {
-  const [vista, setVista] = useState(false);
-  const [verDespues, setVerDespues] = useState(false);
-
+export default function CardPelicula({
+  pelicula,
+  vista,
+  enVerDespues,
+  onMarcarVista,
+  onAgregarVerDespues,
+}: CardPeliculaProps) {
   return (
     <article className="pelicula-card">
       <div className="pelicula-contenido">
@@ -27,11 +33,13 @@ export default function CardPelicula({ pelicula }: CardPeliculaProps) {
       <div className="pelicula-acciones">
         <button
           type="button"
-          className={verDespues ? 'btn-ver-despues activo' : 'btn-ver-despues'}
-          disabled={verDespues}
-          onClick={() => setVerDespues(true)}
+          className={
+            enVerDespues ? 'btn-ver-despues activo' : 'btn-ver-despues'
+          }
+          disabled={enVerDespues}
+          onClick={onAgregarVerDespues}
         >
-          {verDespues ? (
+          {enVerDespues ? (
             '¡Agregado para después!'
           ) : (
             <>
@@ -58,7 +66,7 @@ export default function CardPelicula({ pelicula }: CardPeliculaProps) {
           type="button"
           className={vista ? 'btn-visto activo' : 'btn-visto'}
           disabled={vista}
-          onClick={() => setVista(true)}
+          onClick={onMarcarVista}
         >
           {vista ? (
             '¡Visto!'
