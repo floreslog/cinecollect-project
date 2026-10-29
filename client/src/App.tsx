@@ -1,17 +1,12 @@
 import './App.css';
 import { peliculas } from './data/peliculas';
 import CardPelicula from './components/card-pelicula/CardPelicula';
+import Header from './components/header/Header';
 
 export default function App() {
   return (
     <>
-      <header>
-        <h2>Cinecollect</h2>
-        <nav>
-          <a href="">Mis favoritos</a>
-          <a href="">Ver despues</a>
-        </nav>
-      </header>
+      <Header />
 
       <main className="catalogo-main">
         <h1>Busqueda de peliculas</h1>
