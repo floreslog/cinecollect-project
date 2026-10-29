@@ -12,6 +12,16 @@ function normalizar(texto: string) {
 
 export default function Catalogo() {
   const [busqueda, setBusqueda] = useState('');
+  const [vistas, setVistas] = useState<number[]>([]);
+  const [verDespues, setVerDespues] = useState<number[]>([]);
+
+  function marcarVista(id: number) {
+    setVistas((anteriores) => [...anteriores, id]);
+  }
+
+  function agregarVerDespues(id: number) {
+    setVerDespues((anteriores) => [...anteriores, id]);
+  }
 
   const termino = normalizar(busqueda.trim());
   const peliculasFiltradas = peliculas.filter(
@@ -86,7 +96,14 @@ export default function Catalogo() {
       <div className="lista-de-peliculas">
         {peliculasFiltradas.length > 0 ? (
           peliculasFiltradas.map((pelicula) => (
-            <CardPelicula key={pelicula.id} pelicula={pelicula} />
+            <CardPelicula
+              key={pelicula.id}
+              pelicula={pelicula}
+              vista={vistas.includes(pelicula.id)}
+              enVerDespues={verDespues.includes(pelicula.id)}
+              onMarcarVista={() => marcarVista(pelicula.id)}
+              onAgregarVerDespues={() => agregarVerDespues(pelicula.id)}
+            />
           ))
         ) : (
           <p>No se encontraron películas para "{busqueda}"</p>
