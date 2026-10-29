@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+header h2 {
+  font-family: var(--font-principal);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: var(--text);
+}
