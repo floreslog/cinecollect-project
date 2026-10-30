@@ -95,14 +95,6 @@
   border-color: var(--blue);
 }
 
-.lista-de-peliculas {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  text-align: left;
-}
-
 .paginacion {
   list-style: none;
   display: flex;
