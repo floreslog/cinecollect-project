@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Catalogo.css';
 import { peliculas } from '../../data/peliculas';
-import CardPelicula from '../../components/card-pelicula/CardPelicula';
+import ListaPeliculas from '../../components/lista-peliculas/ListaPeliculas';
 
 function normalizar(texto: string) {
   return texto
@@ -95,22 +95,14 @@ export default function Catalogo({
         </div>
       </form>
 
-      <div className="lista-de-peliculas">
-        {peliculasFiltradas.length > 0 ? (
-          peliculasFiltradas.map((pelicula) => (
-            <CardPelicula
-              key={pelicula.id}
-              pelicula={pelicula}
-              vista={vistas.includes(pelicula.id)}
-              enVerDespues={verDespues.includes(pelicula.id)}
-              onMarcarVista={() => onMarcarVista(pelicula.id)}
-              onAgregarVerDespues={() => onAgregarVerDespues(pelicula.id)}
-            />
-          ))
-        ) : (
-          <p>No se encontraron películas para "{busqueda}"</p>
-        )}
-      </div>
+      <ListaPeliculas
+        peliculas={peliculasFiltradas}
+        vistas={vistas}
+        verDespues={verDespues}
+        onMarcarVista={onMarcarVista}
+        onAgregarVerDespues={onAgregarVerDespues}
+        mensajeVacio={`No se encontraron películas para "${busqueda}"`}
+      />
 
       <nav>
         <ul className="paginacion">
