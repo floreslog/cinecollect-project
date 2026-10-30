@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Inicio from './pages/inicio/Inicio';
 import Catalogo from './pages/catalogo/Catalogo';
+import VerDespues from './pages/ver-despues/VerDespues';
 
 export default function App() {
   const [vistas, setVistas] = useLocalStorage<number[]>('vistas', []);
@@ -29,6 +30,17 @@ export default function App() {
           path="/catalogo"
           element={
             <Catalogo
+              vistas={vistas}
+              verDespues={verDespues}
+              onMarcarVista={marcarVista}
+              onAgregarVerDespues={agregarVerDespues}
+            />
+          }
+        />
+        <Route
+          path="/ver-despues"
+          element={
+            <VerDespues
               vistas={vistas}
               verDespues={verDespues}
               onMarcarVista={marcarVista}
