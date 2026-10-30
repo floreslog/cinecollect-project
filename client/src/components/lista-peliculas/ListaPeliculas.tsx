@@ -1,24 +1,19 @@
 import type { Pelicula } from '../../data/peliculas';
+import { useColeccion } from '../../context/useColeccion';
 import CardPelicula from '../card-pelicula/CardPelicula';
 import './ListaPeliculas.css';
 
 interface ListaPeliculasProps {
   peliculas: Pelicula[];
-  vistas: number[];
-  verDespues: number[];
-  onMarcarVista: (id: number) => void;
-  onAgregarVerDespues: (id: number) => void;
   mensajeVacio: string;
 }
 
 export default function ListaPeliculas({
   peliculas,
-  vistas,
-  verDespues,
-  onMarcarVista,
-  onAgregarVerDespues,
   mensajeVacio,
 }: ListaPeliculasProps) {
+  const { vistas, verDespues, marcarVista, agregarVerDespues } = useColeccion();
+
   return (
     <div className="lista-de-peliculas">
       {peliculas.length > 0 ? (
@@ -28,8 +23,8 @@ export default function ListaPeliculas({
             pelicula={pelicula}
             vista={vistas.includes(pelicula.id)}
             enVerDespues={verDespues.includes(pelicula.id)}
-            onMarcarVista={() => onMarcarVista(pelicula.id)}
-            onAgregarVerDespues={() => onAgregarVerDespues(pelicula.id)}
+            onMarcarVista={() => marcarVista(pelicula.id)}
+            onAgregarVerDespues={() => agregarVerDespues(pelicula.id)}
           />
         ))
       ) : (

@@ -10,19 +10,7 @@ function normalizar(texto: string) {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
-interface CatalogoProps {
-  vistas: number[];
-  verDespues: number[];
-  onMarcarVista: (id: number) => void;
-  onAgregarVerDespues: (id: number) => void;
-}
-
-export default function Catalogo({
-  vistas,
-  verDespues,
-  onMarcarVista,
-  onAgregarVerDespues,
-}: CatalogoProps) {
+export default function Catalogo() {
   const [busqueda, setBusqueda] = useState('');
 
   const termino = normalizar(busqueda.trim());
@@ -31,6 +19,7 @@ export default function Catalogo({
       normalizar(pelicula.nombre).includes(termino) ||
       normalizar(pelicula.actores).includes(termino),
   );
+
   return (
     <main className="catalogo-main">
       <h1>Busqueda de peliculas</h1>
@@ -97,10 +86,6 @@ export default function Catalogo({
 
       <ListaPeliculas
         peliculas={peliculasFiltradas}
-        vistas={vistas}
-        verDespues={verDespues}
-        onMarcarVista={onMarcarVista}
-        onAgregarVerDespues={onAgregarVerDespues}
         mensajeVacio={`No se encontraron películas para "${busqueda}"`}
       />
 

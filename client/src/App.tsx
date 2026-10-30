@@ -1,4 +1,3 @@
-import { useLocalStorage } from './hooks/useLocalStorage';
 import { Routes, Route } from 'react-router';
 import './App.css';
 import Header from './components/header/Header';
@@ -7,47 +6,13 @@ import Catalogo from './pages/catalogo/Catalogo';
 import VerDespues from './pages/ver-despues/VerDespues';
 
 export default function App() {
-  const [vistas, setVistas] = useLocalStorage<number[]>('vistas', []);
-  const [verDespues, setVerDespues] = useLocalStorage<number[]>(
-    'verDespues',
-    [],
-  );
-
-  function marcarVista(id: number) {
-    setVistas((anteriores) => [...anteriores, id]);
-  }
-
-  function agregarVerDespues(id: number) {
-    setVerDespues((anteriores) => [...anteriores, id]);
-  }
-
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route
-          path="/catalogo"
-          element={
-            <Catalogo
-              vistas={vistas}
-              verDespues={verDespues}
-              onMarcarVista={marcarVista}
-              onAgregarVerDespues={agregarVerDespues}
-            />
-          }
-        />
-        <Route
-          path="/ver-despues"
-          element={
-            <VerDespues
-              vistas={vistas}
-              verDespues={verDespues}
-              onMarcarVista={marcarVista}
-              onAgregarVerDespues={agregarVerDespues}
-            />
-          }
-        />
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/ver-despues" element={<VerDespues />} />
       </Routes>
     </>
   );

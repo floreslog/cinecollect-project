@@ -1,19 +1,10 @@
 import { peliculas } from '../../data/peliculas';
+import { useColeccion } from '../../context/useColeccion';
 import ListaPeliculas from '../../components/lista-peliculas/ListaPeliculas';
 
-interface VerDespuesProps {
-  vistas: number[];
-  verDespues: number[];
-  onMarcarVista: (id: number) => void;
-  onAgregarVerDespues: (id: number) => void;
-}
+export default function VerDespues() {
+  const { verDespues } = useColeccion();
 
-export default function VerDespues({
-  vistas,
-  verDespues,
-  onMarcarVista,
-  onAgregarVerDespues,
-}: VerDespuesProps) {
   const peliculasVerDespues = peliculas.filter((pelicula) =>
     verDespues.includes(pelicula.id),
   );
@@ -25,10 +16,6 @@ export default function VerDespues({
 
       <ListaPeliculas
         peliculas={peliculasVerDespues}
-        vistas={vistas}
-        verDespues={verDespues}
-        onMarcarVista={onMarcarVista}
-        onAgregarVerDespues={onAgregarVerDespues}
         mensajeVacio="Todavía no agregas películas para ver después"
       />
     </main>
