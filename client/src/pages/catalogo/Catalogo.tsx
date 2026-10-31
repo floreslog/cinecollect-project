@@ -1,7 +1,10 @@
-import { useState } from 'react';
 import './Catalogo.css';
 import { peliculas, type Pelicula } from '../../data/peliculas';
 import ListaPeliculas from '../../components/lista-peliculas/ListaPeliculas';
+import Paginacion from '../../components/paginacion/Paginacion';
+import { useState } from 'react';
+
+const PELICULAS_POR_PAGINA = 10;
 
 function normalizar(texto: string) {
   return texto
@@ -21,6 +24,7 @@ export default function Catalogo() {
   const [genero, setGenero] = useState('');
   const [duracion, setDuracion] = useState('');
   const [plataforma, setPlataforma] = useState('');
+  const [pagina, setPagina] = useState(1);
 
   const termino = normalizar(busqueda.trim());
 
@@ -42,6 +46,19 @@ export default function Catalogo() {
   }
 
   const peliculasFiltradas = peliculas.filter(coincide);
+  const totalPaginas = Math.ceil(
+    peliculasFiltradas.length / PELICULAS_POR_PAGINA,
+  );
+  const inicio = (pagina - 1) * PELICULAS_POR_PAGINA;
+  const peliculasDePagina = peliculasFiltradas.slice(
+    inicio,
+    inicio + PELICULAS_POR_PAGINA,
+  );
+
+  function cambiarPagina(nuevaPagina: number) {
+    setPagina(nuevaPagina);
+    window.scrollTo({ top: 0 });
+  }
 
   return (
     <main className="catalogo-main">
@@ -74,7 +91,10 @@ export default function Catalogo() {
             type="text"
             placeholder="Buscar titulos, actores o generos..."
             value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
+            onChange={(e) => {
+              setBusqueda(e.target.value);
+              setPagina(1);
+            }}
           />
         </div>
 
@@ -84,7 +104,10 @@ export default function Catalogo() {
             name="genero"
             id="genero"
             value={genero}
-            onChange={(e) => setGenero(e.target.value)}
+            onChange={(e) => {
+              setGenero(e.target.value);
+              setPagina(1);
+            }}
           >
             <option value="">Todos</option>
             <option value="accion">Acción</option>
@@ -104,7 +127,10 @@ export default function Catalogo() {
             name="duracion"
             id="duracion"
             value={duracion}
-            onChange={(e) => setDuracion(e.target.value)}
+            onChange={(e) => {
+              setDuracion(e.target.value);
+              setPagina(1);
+            }}
           >
             <option value="">Todos</option>
             <option value="corta">Corta</option>
@@ -117,7 +143,10 @@ export default function Catalogo() {
             name="plataforma"
             id="plataforma"
             value={plataforma}
-            onChange={(e) => setPlataforma(e.target.value)}
+            onChange={(e) => {
+              setPlataforma(e.target.value);
+              setPagina(1);
+            }}
           >
             <option value="">Todos</option>
             <option value="netflix">Netflix</option>
@@ -129,7 +158,7 @@ export default function Catalogo() {
       </form>
 
       <ListaPeliculas
-        peliculas={peliculasFiltradas}
+        peliculas={peliculasDePagina}
         mensajeVacio={
           busqueda
             ? `No se encontraron películas para "${busqueda}"`
@@ -137,49 +166,11 @@ export default function Catalogo() {
         }
       />
 
-      <nav>
-        <ul className="paginacion">
-          <a href="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 6l-6 6l6 6" />
-            </svg>
-          </a>
-          <a href="" className="activo">
-            1
-          </a>
-          <a href="">2</a>
-          <a href="">3</a>
-          <a href="">4</a>
-          <a href="">5</a>
-          <a href="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </svg>
-          </a>
-        </ul>
-      </nav>
+      <Paginacion
+        paginaActual={pagina}
+        totalPaginas={totalPaginas}
+        onCambiarPagina={cambiarPagina}
+      />
     </main>
   );
 }
