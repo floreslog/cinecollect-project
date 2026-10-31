@@ -1,0 +1,48 @@
+.paginacion {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.paginacion button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.paginacion button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.paginacion button:hover:not(:disabled),
+.paginacion button:focus-visible {
+  border-color: var(--blue);
+  color: var(--text);
+}
+
+.paginacion button.activo {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--on-accent);
+}
+
+.paginacion button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
