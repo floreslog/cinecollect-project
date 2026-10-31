@@ -1,4 +1,5 @@
 # Cinecollect
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 
 Aplicación web para explorar un catálogo de películas y llevar tu propia colección: marcar las que ya viste, guardar las que quieres ver después y tener una lista de favoritas.
 
