@@ -78,7 +78,6 @@
   background: var(--blue);
   border-color: var(--blue);
   color: var(--on-accent);
-  cursor: default;
 }
 
 .btn-ver-despues.activo svg {
@@ -123,7 +122,7 @@
   color: var(--bg);
 }
 
-.btn-visto:disabled {
-  opacity: 0.6;
-  cursor: default;
+.btn-ver-despues.activo:hover,
+.btn-visto.activo:hover {
+  opacity: 0.85;
 }

@@ -5,16 +5,16 @@ interface CardPeliculaProps {
   pelicula: Pelicula;
   vista: boolean;
   enVerDespues: boolean;
-  onMarcarVista: () => void;
-  onAgregarVerDespues: () => void;
+  onAlternarVista: () => void;
+  onAlternarVerDespues: () => void;
 }
 
 export default function CardPelicula({
   pelicula,
   vista,
   enVerDespues,
-  onMarcarVista,
-  onAgregarVerDespues,
+  onAlternarVista,
+  onAlternarVerDespues,
 }: CardPeliculaProps) {
   return (
     <article className="pelicula-card">
@@ -36,8 +36,9 @@ export default function CardPelicula({
           className={
             enVerDespues ? 'btn-ver-despues activo' : 'btn-ver-despues'
           }
-          disabled={enVerDespues}
-          onClick={onAgregarVerDespues}
+          aria-pressed={enVerDespues}
+          title={enVerDespues ? 'Quitar de ver después' : undefined}
+          onClick={onAlternarVerDespues}
         >
           {enVerDespues ? (
             '¡Agregado para después!'
@@ -65,8 +66,9 @@ export default function CardPelicula({
         <button
           type="button"
           className={vista ? 'btn-visto activo' : 'btn-visto'}
-          disabled={vista}
-          onClick={onMarcarVista}
+          aria-pressed={vista}
+          title={vista ? 'Desmarcar como vista' : undefined}
+          onClick={onAlternarVista}
         >
           {vista ? (
             '¡Visto!'

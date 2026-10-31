@@ -9,17 +9,25 @@ export function ColeccionProvider({ children }: { children: ReactNode }) {
     [],
   );
 
-  function marcarVista(id: number) {
-    setVistas((anteriores) => [...anteriores, id]);
+  function alternarVista(id: number) {
+    setVistas((anteriores) =>
+      anteriores.includes(id)
+        ? anteriores.filter((idGuardado) => idGuardado !== id)
+        : [...anteriores, id],
+    );
   }
 
-  function agregarVerDespues(id: number) {
-    setVerDespues((anteriores) => [...anteriores, id]);
+  function alternarVerDespues(id: number) {
+    setVerDespues((anteriores) =>
+      anteriores.includes(id)
+        ? anteriores.filter((idGuardado) => idGuardado !== id)
+        : [...anteriores, id],
+    );
   }
 
   return (
     <ColeccionContext
-      value={{ vistas, verDespues, marcarVista, agregarVerDespues }}
+      value={{ vistas, verDespues, alternarVista, alternarVerDespues }}
     >
       {children}
     </ColeccionContext>
