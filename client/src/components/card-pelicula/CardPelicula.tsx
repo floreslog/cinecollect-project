@@ -5,16 +5,20 @@ interface CardPeliculaProps {
   pelicula: Pelicula;
   vista: boolean;
   enVerDespues: boolean;
+  esFavorito: boolean;
   onAlternarVista: () => void;
   onAlternarVerDespues: () => void;
+  onAlternarFavorito: () => void;
 }
 
 export default function CardPelicula({
   pelicula,
   vista,
   enVerDespues,
+  esFavorito,
   onAlternarVista,
   onAlternarVerDespues,
+  onAlternarFavorito,
 }: CardPeliculaProps) {
   return (
     <article className="pelicula-card">
@@ -31,6 +35,30 @@ export default function CardPelicula({
       </div>
 
       <div className="pelicula-acciones">
+        <button
+          type="button"
+          className={esFavorito ? 'btn-favorito activo' : 'btn-favorito'}
+          aria-pressed={esFavorito}
+          aria-label={
+            esFavorito ? 'Quitar de favoritos' : 'Agregar a favoritos'
+          }
+          title={esFavorito ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+          onClick={onAlternarFavorito}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill={esFavorito ? 'currentColor' : 'none'}
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+          </svg>
+        </button>
         <button
           type="button"
           className={

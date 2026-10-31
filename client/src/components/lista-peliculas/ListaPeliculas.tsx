@@ -12,8 +12,14 @@ export default function ListaPeliculas({
   peliculas,
   mensajeVacio,
 }: ListaPeliculasProps) {
-  const { vistas, verDespues, alternarVista, alternarVerDespues } =
-    useColeccion();
+  const {
+    vistas,
+    verDespues,
+    favoritos,
+    alternarVista,
+    alternarVerDespues,
+    alternarFavorito,
+  } = useColeccion();
 
   return (
     <div className="lista-de-peliculas">
@@ -26,6 +32,8 @@ export default function ListaPeliculas({
             enVerDespues={verDespues.includes(pelicula.id)}
             onAlternarVista={() => alternarVista(pelicula.id)}
             onAlternarVerDespues={() => alternarVerDespues(pelicula.id)}
+            esFavorito={favoritos.includes(pelicula.id)}
+            onAlternarFavorito={() => alternarFavorito(pelicula.id)}
           />
         ))
       ) : (

@@ -126,3 +126,28 @@
 .btn-visto.activo:hover {
   opacity: 0.85;
 }
+
+.btn-favorito {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 0 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.btn-favorito svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-favorito:hover,
+.btn-favorito:focus-visible,
+.btn-favorito.activo {
+  border-color: var(--red);
+  color: var(--red);
+}
