@@ -8,7 +8,7 @@ export default function Header() {
         <Link to="/">Cinecollect</Link>
       </h2>
       <nav>
-        <a href="">Mis favoritos</a>
+        <Link to="/favoritos">Mis favoritos</Link>
         <Link to="/ver-despues">Ver despues</Link>
       </nav>
     </header>

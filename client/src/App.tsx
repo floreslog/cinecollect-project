@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import Inicio from './pages/inicio/Inicio';
 import Catalogo from './pages/catalogo/Catalogo';
 import VerDespues from './pages/ver-despues/VerDespues';
+import Favoritos from './pages/favoritos/Favoritos';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/ver-despues" element={<VerDespues />} />
+        <Route path="/favoritos" element={<Favoritos />} />
       </Routes>
     </>
   );
